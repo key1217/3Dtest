@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>AR Skull</title>
-    <script src="https://modelviewer.dev/shared/model-viewer/model-viewer.js"></script>
+    <title>Model Viewer</title>
+    <script src="https://modelviewer.dev/shared/model-viewer.js"></script>
   </head>
   <body style="margin: 0;">
     <model-viewer
+      src="Skull.glb"
+      ios-src="Skull.usdz"
       alt="Skullモデル"
-      src="skull.glb"
-      ios-src="skull.usdz"
       ar
       ar-modes="webxr scene-viewer quick-look"
       camera-controls
-      style="width: 100%; height: 100%;"
+      style="width: 10%; height: 10%;"
     ></model-viewer>
   </body>
 </html>
