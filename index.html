@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Model Viewer</title>
-    <script src="https://modelviewer.dev/shared/model-viewer.js"></script>
+    <meta charset="utf-8">
+    <title>ModerlViewerを使ったWebARページ</title>
   </head>
-  <body style="margin: 0;">
-    <model-viewer
-      src="Skull.glb"
-      ios-src="Skull.usdz"
-      alt="Skullモデル"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      camera-controls
-      style="width: 10%; height: 10%;"
-    ></model-viewer>
+  <body>
+  <script 
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+
+  </script>
+
+    <model-viewer  
+    ar
+    alt="Skullモデル"
+    src="Skull.glb" 
+    ios-src="Skull.usdz" 
+    style="width: 100%; height: 100%;"
+
+    background-color="#000000"
+    shadow-intensity="0.7"
+    camera-controls
+    interaction-prompt="auto"
+    auto-rotate ar magic-leap>
+
+    </model-viewer>
   </body>
 </html>
