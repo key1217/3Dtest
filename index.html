@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>ModerlViewerを使ったWebARページ</title>
+    <title>Model Viewerを使ったWebARページ</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
   </head>
   <body>
@@ -13,10 +13,39 @@
       camera-controls
       shadow-intensity="1"
       shadow-softness="0"
+      ar-modes="webxr scene-viewer quick-look"
       ar-placement="floor"
-      ar-scale="10%"
-      >
+      ar-scale="auto"
+       >
+      <div class="controls">
+        <div>
+           Scale: X: <input id="x" value="1" size="3" class="number">,
+           Y: <input id="y" value="1" size="3" class="number">,
+           Z: <input id="z" value="1" size="3" class="number">
+        </div>
+      </div>
     </model-viewer>
+<script>
+const modelViewerScale = document.querySelector("model-viewer#scale");
+const x = document.querySelector('#x');
+const y = document.querySelector('#y');
+const z = document.querySelector('#z');
+
+const updateScale = () => {
+  modelViewerScale.scale = `${x.value} ${y.value} ${z.value}`;
+  modelViewerScale.updateFraming();  // カメラをフレーム内に収める
+};
+
+x.addEventListener('input', () => {
+  updateScale();
+});
+y.addEventListener('input', () => {
+  updateScale();
+});
+z.addEventListener('input', () => {
+  updateScale();
+});
+</script>
   </body>
   <style>
     model-viewer {
